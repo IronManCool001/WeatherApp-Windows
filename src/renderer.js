@@ -71,7 +71,7 @@ function getData(city){
             skyD.innerHTML=`sky: ${sky}`
             document.getElementById("winfo").appendChild(skyD); 
         }
-        setIntervalX(()=>{
+        /* setIntervalX(()=>{
             const NOTIFICATION_TITLE = 'Weather Update'
             const NOTIFICATION_BODY = `Temp:${temp} \n Sky:${sky}`
 
@@ -86,7 +86,7 @@ function getData(city){
                 skyD.innerHTML=`sky: ${sky}`
                 document.getElementById("winfo").appendChild(skyD); 
             }
-        },1800000,10)
+        },1800000,10) */
     })
 }
 
