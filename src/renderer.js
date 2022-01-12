@@ -45,6 +45,7 @@ function getData(city){
     .then(res=>{
         const sky=res.data.sky;
         let temp=res.data.temp;
+        document.getElementById("winfo").innerHTML="";
         temp = temp.split("°")
         temp=Math.round((temp[0]-32)*5/9)
         temp = String(temp) + "°C"
@@ -56,6 +57,20 @@ function getData(city){
         skyD.innerHTML=`sky: ${sky}`
         document.getElementById("winfo").appendChild(skyD); 
         console.log(sky,temp);
+        const NOTIFICATION_TITLE = 'Weather Update'
+        const NOTIFICATION_BODY = `\n City:${city} \n Temp:${temp} \n Sky:${sky}`
+
+        new Notification(NOTIFICATION_TITLE, { body: NOTIFICATION_BODY ,icon:"./favicon.ico"})
+        .onclick = () => {
+            document.getElementById("winfo").innerHTML="";
+            const tempD=document.createElement("h2");
+            tempD.style.marginTop="0px";
+            tempD.innerHTML=temp
+            document.getElementById("winfo").appendChild(tempD);
+            const skyD=document.createElement("h3");
+            skyD.innerHTML=`sky: ${sky}`
+            document.getElementById("winfo").appendChild(skyD); 
+        }
         setIntervalX(()=>{
             const NOTIFICATION_TITLE = 'Weather Update'
             const NOTIFICATION_BODY = `Temp:${temp} \n Sky:${sky}`
