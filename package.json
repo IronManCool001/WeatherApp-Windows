@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "productName": "frontend",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "My Electron application description",
   "main": ".webpack/main",
   "scripts": {
@@ -44,9 +44,9 @@
           "@electron-forge/plugin-webpack",
           {
             "mainConfig": "./webpack.main.config.js",
-            "devContentSecurityPolicy": "connect-src 'self' https://weatherzapi.herokuapp.com/ 'unsafe-eval' ",
-            "packagerConfig":{
-              "icon":"./assets/favicon.ico"
+            "devContentSecurityPolicy": "connect-src 'self' https://weatherzapi.up.railway.app/ 'unsafe-eval' ",
+            "packagerConfig": {
+              "icon": "./assets/favicon.ico"
             },
             "renderer": {
               "config": "./webpack.renderer.config.js",
@@ -64,11 +64,11 @@
     }
   },
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.63",
-    "@electron-forge/maker-deb": "^6.0.0-beta.63",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.63",
-    "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
-    "@electron-forge/maker-zip": "^6.0.0-beta.63",
+    "@electron-forge/cli": "6.0.0-beta.63",
+    "@electron-forge/maker-deb": "6.0.0-beta.63",
+    "@electron-forge/maker-rpm": "6.0.0-beta.63",
+    "@electron-forge/maker-squirrel": "6.0.0-beta.63",
+    "@electron-forge/maker-zip": "6.0.0-beta.63",
     "@electron-forge/plugin-webpack": "6.0.0-beta.63",
     "@vercel/webpack-asset-relocator-loader": "1.7.0",
     "css-loader": "^6.0.0",
