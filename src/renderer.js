@@ -41,7 +41,7 @@ function setIntervalX(callback,delay,repetitions){
 }
 
 function getData(city){
-    axios.get(`https://weatherzapi.herokuapp.com/api/weather/${city}`)
+    axios.get(`https://weatherzapi.up.railway.app/api/weather/${city}`)
     .then(res=>{
         const sky=res.data.sky;
         let temp=res.data.temp;
